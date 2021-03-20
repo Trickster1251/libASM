@@ -14,7 +14,7 @@ int main()
     // read(0,&sym,5);
     // res = ft_write(1,&sym,5);
 
-    char    *src = "Hello Wolrd";
+    char    *src = "Hello";
 
     char    *dst = calloc(ft_strlen(src) + 1, sizeof(char));
 

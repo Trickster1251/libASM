@@ -8,7 +8,7 @@ OBJC = $(SRCS:.s=.o)
 NASM = nasm -f macho64
 
 
-$(NAME):	$(OBJC)
+$(NAME):	$(NAME) $(OBJC)
 			ar rc $(NAME) $(OBJC)
 
 $.o:		$.s
@@ -25,6 +25,6 @@ re:			fclean all
 
 main:		main.o
 			gcc -Wall -Wextra -Werror -c main.c;
-			gcc main.o libasm.a
+			gcc main.c libasm.a
 
 .PHONY: all re fclean clean $(NAME)
