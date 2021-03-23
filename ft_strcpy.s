@@ -1,5 +1,4 @@
 section .text
-    extern ___error
     global _ft_strcpy
 
 _copy:
@@ -11,8 +10,9 @@ _copy:
     jmp _copy
 
 _ft_strcpy:
-    xor rax, rax
-    mov rcx, 0
+    xor rcx, rcx
+    cmp rsi, 0
+    je _exit
     jmp _copy
 
 _exit:

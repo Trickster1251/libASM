@@ -2,23 +2,28 @@
 
 int main()
 {
-    // int res = ft_strlen("hello world sdafasd fasd fa12345sfasfasfasfas\n");
-    // printf("%d\n", res);
-    // res = strlen("hello world sdafasd fasd fasfasfa12345sfasfas\n");
-    // printf("%d\n", res);
-
-
-    // char    sym;
-    // char    *str = "hello";
-    // ft_write(1,"\n",1);
-    // read(0,&sym,5);
-    // res = ft_write(1,&sym,5);
 
     char    *src = "Hello";
+    // char    *dst = calloc(ft_strlen("Hello") + 1, sizeof(char));
 
-    char    *dst = calloc(ft_strlen(src) + 1, sizeof(char));
 
-    dst = ft_strcpy(dst, src);
+    const char *str1 = "Najsdflkjasdflkjsadlkfjsal";
+    const char *str2 = "Hello";
+    char *s1;
+    // s1 = ft_strdup(str1);
+    // char *s = ft_strdup(src);
+//     printf("src --> %s", src);
+//     printf(" --> %p\n", &src);
+//     printf("dst --> %s", dst);
+//     printf(" --> %p", &dst);
 
-    printf("dst --> %s", dst);
+// int len = ft_bzero(dst, 100000);
+
+
+// printf("%s------>%p\n", s1 ,&s1);
+// printf("%s------>%p\n", str1 ,&str1);
+printf("%d\n", ft_strcmp("hello", "hello2"));
+// printf("%s---%p\n", src, &src);
+// printf("%s---%p\n", dst, &dst);
+// printf("-->%p", &dst);
 }

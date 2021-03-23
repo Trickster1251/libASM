@@ -14,4 +14,3 @@ _error:
     mov [rax], rdi
     mov rax, -1
     ret
-    
