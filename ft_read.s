@@ -2,7 +2,7 @@ section .text
     extern ___error
     global _ft_read
 
-_ft_write:
+_ft_read:
     mov rax, 0x2000003
     syscall
     jc _error

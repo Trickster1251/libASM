@@ -2,15 +2,9 @@
 
 int main()
 {
-    char dst[5];
-    // char dst1[12];
-    // char dst2[1];
-    // char    *src = "Hello";
-    // // char    *dst = calloc(ft_strlen("Hello") + 1, sizeof(char));
-    // char    *dest;
-    // char    *srcs = "Hello World!";
+    char dst[6];
+    char dst2[34];
 
-    // char *s1;
 printf("HELLO, \n");
 system("whoami");
 printf("------------------->TEST : ft_strlen<-----------------\n");
@@ -36,17 +30,31 @@ printf("------------------->TEST : ft_strcpy<-----------------\n");
 printf("my ft_strcpy: %s\n", ft_strcpy(dst, "hello"));
 char *res = strcpy(dst, "hello");
 printf("glibc strcpy: %s\n", res);
-// printf("my ft_strcpy: %s\n", ft_strcpy(dst1, "Hello World!"));
-// printf("glibc strcpy: %s\n", strcpy(dst1, "Hello World!"));
-// printf("my ft_strcpy: %s\n", ft_strcpy(dst2, "i"));
-// printf("glibc strcpy: %s\n", strcpy(dst2, "i"));
-// printf("glibc strdup: %s\n", strdup("hello"));
-// printf("my ft_strdup: %s\n", ft_strdup("hello"));
-// printf("glibc strdup: %s\n", strdup("hello"));
-// printf("%d\n", ft_strcmp("hello", "hello2"));
-// printf("%d\n", ft_strcmp("hello", "hello2"));
-// printf("%s---%p\n", src, &src);
-// printf("%s---%p\n", dst, &dst);
-// printf("-->%p", &dst);
-
+printf("my ft_strcpy: %s\n", ft_strcpy(dst2, "sadfkljsadlkfjasdlkfjalskdjflaksj"));
+res = strcpy(dst2, "sadfkljsadlkfjasdlkfjalskdjflaksj");
+printf("glibc strcpy: %s\n", res);
+char dst3[19];
+printf("my ft_strcpy: %s\n", ft_strcpy(dst3, "It's working, wow!"));
+res = strcpy(dst3, "It's working, wow!");
+printf("glibc strcpy: %s\n", res);
+printf("------------------->TEST : ft_write<-----------------\n");
+char *str = "If you could get me a drink";
+printf(" my ft_write: %zu\n", ft_write(1, str, ft_strlen(str)));
+printf(" glibc write: %zu\n", write(1, str, ft_strlen(str)));
+printf(" my ft_write: %zu\n", ft_write(1, "Lips are chapped and faded", 26));
+printf(" glibc write: %zu\n", write(1, "Lips are chapped and faded", 26));
+printf("------------------->TEST : ft_read<-----------------\n");
+char sym;
+ft_write(1,"my ft_write: ", 13);
+ft_read(0, &sym, 1);
+ft_write(1,"my : ", 5);
+ft_write(1, &sym, 1);
+ft_write(1,"\n", 1);
+printf("------------------->TEST : ft_strdup<-----------------\n");
+char *s;
+char *s1 = "Cause the hardest part of this is leaving you";
+printf("my ft_strdup: %s\n", s = ft_strdup(s1));
+printf("glibc strdup: %s\n", s = strdup(s1));
+printf("my ft_strdup: %s\n", s = ft_strdup("And all my hairs abandoned all my body"));
+printf("glibc strdup: %s\n", s = strdup("And all my hairs abandoned all my body"));
 }
