@@ -32,9 +32,8 @@ fclean:		clean
 
 re:			fclean all
 
-test:		main.o
-			@gcc -Wall -Wextra -Werror -c main.c;
-			@gcc main.c libasm.a
+test:
+			@gcc -Wall -Wextra -Werror main.c libasm.a;
 			@echo "$(GREEN)------>"./TEST" CREATED<-----"
 
 .PHONY: all re fclean clean test
