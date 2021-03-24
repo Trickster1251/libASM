@@ -1,33 +1,40 @@
 NAME = libasm.a
-SRCS =	./ft_read.s \
-		./ft_write.s \
-		./ft_strcpy.s \
-		./ft_strlen.s \
-		./ft_strdup.s \
-		./ft_strcmp.s \
+RED = \033[0;31m
+GREEN = \033[0;32m
+SRCS =	ft_read.s \
+		ft_write.s \
+		ft_strcpy.s \
+		ft_strlen.s \
+		ft_strdup.s \
+		ft_strcmp.s
 
 OBJC = $(SRCS:.s=.o)
+HEADER = libasm.h
 NASM = nasm -f macho64
 
 
-$(NAME):	$(OBJC)
-			ar rc $(NAME) $(OBJC)
+%.o : %.s
+	@$(NASM) $< -o $@
 
-$.o:		$.s
-			$(NASM) $<
+$(NAME):	$(OBJC)
+			@ar rc $(NAME) $(OBJC)
+			@echo "$(GREEN)------>LIBASM.A CREATED<-----"
 
 all:		$(NAME)
 
 clean:		
-			rm -f $(OBJS)
+			@rm -f $(OBJC)
+			@echo "$(RED)------>DELETE ALL .o FILE<-----"
 
 fclean:		clean
-			rm -f $(NAME)
+			@rm -f $(NAME)
+			@echo "$(RED)------>LIBASM.A DELETE<-----"
 
 re:			fclean all
 
-main:		main.o
-			gcc -Wall -Wextra -Werror -c main.c;
-			gcc main.c libasm.a
+test:		main.o
+			@gcc -Wall -Wextra -Werror -c main.c;
+			@gcc main.c libasm.a
+			@echo "$(GREEN)------>"./TEST" CREATED<-----"
 
-.PHONY: all re fclean clean
+.PHONY: all re fclean clean test
