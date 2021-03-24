@@ -3,13 +3,13 @@ segment .text
 
 _ft_strlen:
     xor rax, rax
-    jmp _increment
+    jmp .increment
 
-_increment:
+.increment:
     cmp BYTE [rdi + rax], 0
-    je _end
+    je .end
     inc rax
-    jmp _increment
+    jmp .increment
 
-_end:
+.end:
     ret

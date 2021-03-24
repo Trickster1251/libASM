@@ -50,6 +50,7 @@ ft_read(0, &sym, 1);
 ft_write(1,"my : ", 5);
 ft_write(1, &sym, 1);
 ft_write(1,"\n", 1);
+ft_read(0, &sym, 1);
 printf("------------------->TEST : ft_strdup<-----------------\n");
 char *s;
 char *s1 = "Cause the hardest part of this is leaving you";

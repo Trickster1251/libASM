@@ -14,10 +14,10 @@ NASM = nasm -f macho64
 
 
 %.o : %.s
-	@$(NASM) $< -o $@
+	@$(NASM) $<
 
 $(NAME):	$(OBJC)
-			@ar rc $(NAME) $(OBJC)
+			@ar rc $(NAME) $?
 			@echo "$(GREEN)------>LIBASM.A CREATED<-----"
 
 all:		$(NAME)
